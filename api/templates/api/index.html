@@ -1,0 +1,25 @@
+   <!DOCTYPE html>
+   <html lang="ru">
+   <head>
+       <meta charset="UTF-8">
+       <title>Тестирование API</title>
+       <script>
+           async function testAPI() {
+               const response = await fetch('http://localhost:8000/api/endpoint/', {
+                   method: 'GET',
+                   headers: {
+                       'Content-Type': 'application/json',
+                   }
+               });
+               const data = await response.json();
+               document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+           }
+       </script>
+   </head>
+   <body>
+       <h1>Тестирование API</h1>
+       <button onclick="testAPI()">Выполнить запрос</button>
+       <pre id="result"></pre>
+   </body>
+   </html>
+   
